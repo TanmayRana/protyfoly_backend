@@ -47,8 +47,14 @@ const AdminContact = () => {
     twitterurl: "",
   });
 
+  // useEffect(() => {
+  //   if (contactData?.email) {
+  //     localStorage.setItem("profileemail", contactData.email);
+  //   }
+  // }, [contactData.email]);
+
   useEffect(() => {
-    if (contactData?.email) {
+    if (typeof window !== "undefined" && contactData?.email) {
       localStorage.setItem("profileemail", contactData.email);
     }
   }, [contactData.email]);

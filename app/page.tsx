@@ -874,12 +874,23 @@ const AdminProfile = () => {
   // localStorage.setItem("profilename", profile.name);
 
   // Update localStorage only on client after profile is loaded
+  // useEffect(() => {
+  //   if (profile?.profileImage) {
+  //     localStorage.setItem("profileImage", profile.profileImage);
+  //   }
+  //   if (profile?.name) {
+  //     localStorage.setItem("profilename", profile.name);
+  //   }
+  // }, [profile]);
+
   useEffect(() => {
-    if (profile?.profileImage) {
-      localStorage.setItem("profileImage", profile.profileImage);
-    }
-    if (profile?.name) {
-      localStorage.setItem("profilename", profile.name);
+    if (typeof window !== "undefined") {
+      if (profile?.profileImage) {
+        localStorage.setItem("profileImage", profile.profileImage);
+      }
+      if (profile?.name) {
+        localStorage.setItem("profilename", profile.name);
+      }
     }
   }, [profile]);
 

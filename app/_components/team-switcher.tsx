@@ -131,6 +131,24 @@ export function TeamSwitcher() {
   //   email: localStorage.getItem("profileemail"),
   // };
 
+  // const [profile, setProfile] = React.useState({
+  //   name: "User",
+  //   profileImage: null as string | null,
+  //   email: "",
+  // });
+
+  // React.useEffect(() => {
+  //   const name = localStorage.getItem("profilename") || "User";
+  //   const profileImage = localStorage.getItem("profileImage");
+  //   const email = localStorage.getItem("profileemail");
+
+  //   setProfile({
+  //     name,
+  //     profileImage: profileImage || "",
+  //     email: email || "",
+  //   });
+  // }, []);
+
   const [profile, setProfile] = React.useState({
     name: "User",
     profileImage: null as string | null,
@@ -138,15 +156,17 @@ export function TeamSwitcher() {
   });
 
   React.useEffect(() => {
-    const name = localStorage.getItem("profilename") || "User";
-    const profileImage = localStorage.getItem("profileImage");
-    const email = localStorage.getItem("profileemail");
+    if (typeof window !== "undefined") {
+      const name = localStorage.getItem("profilename") || "User";
+      const profileImage = localStorage.getItem("profileImage");
+      const email = localStorage.getItem("profileemail");
 
-    setProfile({
-      name,
-      profileImage: profileImage || "",
-      email: email || "",
-    });
+      setProfile({
+        name,
+        profileImage: profileImage || "",
+        email: email || "",
+      });
+    }
   }, []);
 
   const isCollapsed = sidebarState === "collapsed";
