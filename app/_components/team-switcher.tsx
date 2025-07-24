@@ -172,7 +172,7 @@ export function TeamSwitcher() {
   const getUserInfo = async () => {
     try {
       const userInfo = await axios.get("/api/userInfo");
-      console.log("userInfo", userInfo);
+      console.log("userInfo", userInfo.data);
       setProfile({
         name: userInfo.data.name,
         profileImage: userInfo.data.profileImage,
