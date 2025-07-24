@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { connectToDB } from "@/lib/db/connectDB";
 import About, { Passions } from "@/lib/Schemas/AboutSchema";

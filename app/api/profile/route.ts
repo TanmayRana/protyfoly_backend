@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // app/api/profile/route.ts
 import { connectToDB } from "@/lib/db/connectDB";
 import Profile from "@/lib/Schemas/ProfileSchema";

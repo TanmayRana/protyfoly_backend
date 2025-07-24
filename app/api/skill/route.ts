@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import SkillsCategory from "@/lib/Schemas/SkillsCategorySchema";
 import Skills from "@/lib/Schemas/SkillsSchema";
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {

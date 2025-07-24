@@ -134,7 +134,7 @@
 
 // export default skillsSlice.reducer;
 
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Skill } from "@/types";
 import { service } from "./skillsService";
 // import * as service from "@/lib/services/skillsService";

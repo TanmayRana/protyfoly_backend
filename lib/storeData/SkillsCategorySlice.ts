@@ -138,7 +138,6 @@
 // export const { resetSkillsCategoryState } = skillsCategorySlice.actions;
 // export default skillsCategorySlice.reducer;
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // "use client";
 
 // import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";

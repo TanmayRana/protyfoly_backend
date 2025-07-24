@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { connectToDB } from "@/lib/db/connectDB";
 import { Contact } from "@/lib/Schemas/contactSchema";
 
