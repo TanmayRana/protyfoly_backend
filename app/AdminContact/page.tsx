@@ -35,6 +35,8 @@ const AdminContact = () => {
   // console.log("contactDataFromStore:", contactDataFromStore[0].email);
   // console.log("socialDataFromStore:", socialDataFromStore);
 
+  // Update localStorage with profile email after contact data is loaded
+
   // Local form state with your keys
   const [contactData, setContactData] = useState({
     email: "",
@@ -44,6 +46,12 @@ const AdminContact = () => {
     linkedinurl: "",
     twitterurl: "",
   });
+
+  useEffect(() => {
+    if (contactData?.email) {
+      localStorage.setItem("profileemail", contactData.email);
+    }
+  }, [contactData.email]);
 
   // Load data on mount
   useEffect(() => {

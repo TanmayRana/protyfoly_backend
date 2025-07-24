@@ -869,8 +869,18 @@ const AdminProfile = () => {
   // Get profile from redux store
   const profile = useAppSelector((state) => state.profile);
 
-  localStorage.setItem("profileImage", profile.profileImage);
-  localStorage.setItem("profilename", profile.name);
+  // localStorage.setItem("profileImage", profile.profileImage);
+  // localStorage.setItem("profilename", profile.name);
+
+  // Update localStorage only on client after profile is loaded
+  useEffect(() => {
+    if (profile?.profileImage) {
+      localStorage.setItem("profileImage", profile.profileImage);
+    }
+    if (profile?.name) {
+      localStorage.setItem("profilename", profile.name);
+    }
+  }, [profile]);
 
   // Set local personal data state; init with profile or defaults
   const [personalData, setPersonalData] = useState(() => ({
