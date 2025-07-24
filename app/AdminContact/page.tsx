@@ -129,7 +129,7 @@ const AdminContact = () => {
             className="space-y-4 lg:space-y-6"
           >
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+              <label className=" text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
                 <Mail size={16} />
                 Email Address
               </label>
@@ -145,7 +145,7 @@ const AdminContact = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+              <label className=" text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
                 <Phone size={16} />
                 Phone Number
               </label>
@@ -161,7 +161,7 @@ const AdminContact = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+              <label className=" text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
                 <MapPin size={16} />
                 Location
               </label>
@@ -195,7 +195,7 @@ const AdminContact = () => {
             className="space-y-4 lg:space-y-6"
           >
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+              <label className=" text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
                 <Github size={16} />
                 GitHub URL
               </label>
@@ -211,7 +211,7 @@ const AdminContact = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+              <label className=" text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
                 <Linkedin size={16} />
                 LinkedIn URL
               </label>
@@ -230,7 +230,7 @@ const AdminContact = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+              <label className=" text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
                 <Twitter size={16} />
                 Twitter URL (Optional)
               </label>
