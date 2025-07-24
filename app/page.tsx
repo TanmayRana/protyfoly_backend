@@ -883,16 +883,16 @@ const AdminProfile = () => {
   //   }
   // }, [profile]);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (profile?.profileImage) {
-        localStorage.setItem("profileImage", profile.profileImage);
-      }
-      if (profile?.name) {
-        localStorage.setItem("profilename", profile.name);
-      }
-    }
-  }, [profile]);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     if (profile?.profileImage) {
+  //       localStorage.setItem("profileImage", profile.profileImage);
+  //     }
+  //     if (profile?.name) {
+  //       localStorage.setItem("profilename", profile.name);
+  //     }
+  //   }
+  // }, [profile]);
 
   // Set local personal data state; init with profile or defaults
   const [personalData, setPersonalData] = useState(() => ({

@@ -53,11 +53,11 @@ const AdminContact = () => {
   //   }
   // }, [contactData.email]);
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && contactData?.email) {
-      localStorage.setItem("profileemail", contactData.email);
-    }
-  }, [contactData.email]);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined" && contactData?.email) {
+  //     localStorage.setItem("profileemail", contactData.email);
+  //   }
+  // }, [contactData.email]);
 
   // Load data on mount
   useEffect(() => {
@@ -109,7 +109,7 @@ const AdminContact = () => {
     );
   };
 
-  localStorage.setItem("profileemail", contactData?.email);
+  // localStorage.setItem("profileemail", contactData?.email);
 
   return (
     <div className="space-y-6 lg:space-y-8">

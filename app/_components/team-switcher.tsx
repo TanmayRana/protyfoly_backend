@@ -120,6 +120,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import axios from "axios";
 
 export function TeamSwitcher() {
   const { state: sidebarState } = useSidebar();
@@ -155,18 +156,35 @@ export function TeamSwitcher() {
     email: "",
   });
 
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      const name = localStorage.getItem("profilename") || "User";
-      const profileImage = localStorage.getItem("profileImage");
-      const email = localStorage.getItem("profileemail");
+  // React.useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const name = localStorage.getItem("profilename") || "User";
+  //     const profileImage = localStorage.getItem("profileImage");
+  //     const email = localStorage.getItem("profileemail");
 
+  //     setProfile({
+  //       name,
+  //       profileImage: profileImage || "",
+  //       email: email || "",
+  //     });
+  //   }
+  // }, []);
+  const getUserInfo = async () => {
+    try {
+      const userInfo = await axios.get("/api/userInfo");
+      console.log("userInfo", userInfo);
       setProfile({
-        name,
-        profileImage: profileImage || "",
-        email: email || "",
+        name: userInfo.data.name,
+        profileImage: userInfo.data.profileImage,
+        email: userInfo.data.email,
       });
+    } catch (error) {
+      console.log("error", error);
     }
+  };
+
+  React.useEffect(() => {
+    getUserInfo();
   }, []);
 
   const isCollapsed = sidebarState === "collapsed";
