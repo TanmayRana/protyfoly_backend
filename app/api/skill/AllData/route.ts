@@ -2,6 +2,7 @@ import { connectToDB } from "@/lib/db/connectDB";
 import SkillsCategory from "@/lib/Schemas/SkillsCategorySchema";
 import Skills from "@/lib/Schemas/SkillsSchema";
 
+// String-based icon mapping (used on frontend)
 const ICON_MAP: Record<string, string> = {
   Frontend: "Globe",
   Backend: "Server",
@@ -17,24 +18,21 @@ export async function GET() {
     const allSkills = await Skills.find();
 
     const skillCategories = categories.map((category) => {
+      // Match skills where skill.category === category._id
       const matchedSkills = allSkills
         .filter(
-          (skill) =>
-            skill?.skills?.category === category?.skillsCategories?.category
+          (skill) => skill?.category?.toString() === category?._id.toString()
         )
         .map((skill) => ({
           name: skill.name,
           level: skill.level,
         }));
 
-      const iconKey =
-        category?.skillsCategories?.category || category?.category;
+      const iconKey = category?.category;
       const icon = ICON_MAP[iconKey] || "Default";
 
-      console.log("Selected icon:", icon);
-
       return {
-        title: category.category,
+        title: iconKey,
         icon,
         color: category.color,
         skills: matchedSkills,
