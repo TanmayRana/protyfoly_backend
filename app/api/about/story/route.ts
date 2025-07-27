@@ -5,7 +5,7 @@ import About, { Passions } from "@/lib/Schemas/AboutSchema";
 export async function GET() {
   try {
     await connectToDB();
-    const about = await About.findOne(); // only one
+    const about = await About.findOne().populate("passions"); // only one
     return Response.json({ about, status: 200 });
   } catch (error) {
     return Response.json({ error: "Failed to fetch about" }, { status: 500 });
