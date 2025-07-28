@@ -7,6 +7,7 @@ import {
   BookOpen,
   Bot,
   Command,
+  Cpu,
   Frame,
   GalleryVerticalEnd,
   Map,
@@ -70,6 +71,11 @@ const data = {
       title: "Contact",
       url: "/AdminContact",
       icon: Mail,
+    },
+    {
+      title: "Technologies",
+      url: "/AdminTechnologies",
+      icon: Cpu,
     },
   ],
 };

@@ -8,7 +8,7 @@ import certificationsReducer from "@/lib/storeData/certificationSlice";
 import aboutReducer from "@/lib/storeData/aboutSlice";
 import contactReducer from "@/lib/storeData/contactSlice";
 import socialMediaReducer from "@/lib/storeData/SocialMediaSlice";
-
+import technologieReducer from "@/lib/storeData/technologieSlice";
 export const store = configureStore({
   reducer: {
     profile: profileReducer,
@@ -19,6 +19,7 @@ export const store = configureStore({
     about: aboutReducer,
     contact: contactReducer,
     socialMedia: socialMediaReducer,
+    technologie: technologieReducer,
   },
 });
 
